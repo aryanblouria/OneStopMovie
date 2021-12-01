@@ -1,0 +1,34 @@
+{% extends 'header.html' %}
+{% block title %} Top Ten Opinion {% endblock %}
+{% block content %}
+
+<div class="container-fluid rec-container">
+  <div class="main-text">
+    <h1>Your Opinion Of This Movie</h1>
+  </div>
+</div>
+<div class="container h-100 mx-auto">
+  <div class="d-flex justify-content-center h-100">
+    <form action="{{ url_for(goto, movid=movid) }}" method="post">
+      <div class="input">
+        <button class="ilab" type="button" name="button" disabled>
+          Rate this Movie
+        </button>
+        <input class="ibox" id="rating" type="number" name="rating" required min='0' max='10' step="0.01" placeholder="Rate this movie between 0 and 10">
+      </div>
+      <div class="input">
+        <button class="ilab" type="button" name="button" disabled>
+          Review
+        </button>
+        <input class="ibox" id="review" type="text" name="review" required placeholder="What are your thoughts about this movie??">
+      </div>
+      <div class="btn">
+        <input class="get-started" type="submit" value="Add"></input>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+{% endblock %}

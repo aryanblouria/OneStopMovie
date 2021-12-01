@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sign-in</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+
+    <main>
+  <div class="container py-4">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="p-5 mb-4 rounded-3">
+      <div class="container-fluid py-5 text-center">
+        <h1 class="display-5 fw-bold">{{ data[0] }}</h1>
+        <br>
+        <br>
+        <p class="fs-4">{{ data[1] }}</p>
+        <br>
+        <br>  
+        <button class="get-started"> <a href="{{ url_for(data[3]) }}">{{ data[2] }}</a></button>
+      </div>
+    </div>
+  </div>
+</main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}" charset="utf-8"></script>
+</body>
+
+</html>

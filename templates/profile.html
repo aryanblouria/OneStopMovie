@@ -1,0 +1,37 @@
+{% extends 'header.html' %}
+
+{% block title %}
+  My Profile
+{% endblock %}
+
+{% block content %}
+  <div class="container mtop shadow">
+    <div class="row">
+      <div class="col-md-12 col-lg-5 poster">
+        <img class="big-pic" src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="user profile picture" height="500px" width="360px">
+      </div>
+      <div class="col info">
+        <h1 class="username">Hi, {{ user_data.username }}</h1>
+        <p class="userbio"> {{ user_data.bio }} </p>
+        <div class="details">
+          <h5 class="userdetails">Age:
+            <span class="details">
+              {{ age   }}
+            </span>
+          </h5>
+          <h5 class="userdetails">Date Joined: <span class="details">{{ user_data.djoin }}</span></h5>
+          <h5 class="userdetails">Favourite Director: <span class="details">{{ user_data.fvdir }}</span></h5>
+          <h5 class="userdetails">Favourite Movie: <span class="details">{{ user_data.fvmov }}</span></h5>
+          <h5 class="userdetails">Preferred Language: <span class="details">{{ user_data.prflng }}</span></h5>
+          <h5 class="userdetails">Preferred Genre: <span class="details">{{ user_data.prfgen }}</span></h5>
+        </div>
+        <div class="btn">
+          <button class="get-started " type="button" name="button" style="margin: 10px;"><a href="{{ url_for('movrec') }}">Recommend</a></button>
+          <button class="get-started " type="button" name="button" style="margin: 10px;"><a href="{{ url_for('movsrc') }}">Search</a></button>
+          <button class="get-started " type="button" name="button" style="margin: 10px;"><a href="{{ url_for('topten') }}">Top 10 List</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+{% endblock %}

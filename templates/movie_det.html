@@ -1,0 +1,52 @@
+{% extends 'header.html' %}
+{% block title %} Search Results {% endblock %}
+{% block content %}
+
+<div class="container mtop shadow">
+  <div class="row">
+    <div class="col-md-12 col-lg-5 poster">
+      <img class="big-pic" src="{{ data[1]['poster'] }}" alt="movie poster" height="500px" width="360px">
+    </div>
+    <div class="col info">
+      <h1 class="moviename">{{ data[1]['title'] }}</h1>
+      <p class="movietext">{{ data[1]['overview'] }}</p>
+      <div class="details">
+        <h5 class="moviedetails">Tagline: <span class="details">{{ data[1]['tag'] }}</span></h5>
+        <h5 class="moviedetails">Genres: <span class="details">
+          {% for i in data[1]['genres'] %}
+            {{i}}
+          {% endfor %}
+        </span></h5>
+        <h5 class="moviedetails">Runtime: <span class="details">{{ data[1]['runtime'] }} min</span></h5>
+        <h5 class="moviedetails">Director: <span class="details">{{ data[1]['director'] }}</span></h5>
+        <h5 class="moviedetails">Year Released: <span class="details">{{ data[1]['year'] }}</span></h5>
+        <h5 class="moviedetails">Rating: <span class="details">{{ data[1]['rating'] }} / 10 IMDB</span></h5>
+        <h5 class="moviedetails">Languages: <span class="details">
+          {% for i in data[1]['language'] %}
+            {{i}}
+          {% endfor %}
+        </span></h5>
+      </div>
+      <hr>
+      <h2 class="moviename">Cast</h2>
+      {% for i in data[0] %}
+        <div class="card1 card text-center">
+          <img src="{{ i['img'] }}" class="img-fluid card-img" width="100px" height="100px">
+          <div class="card-img-overlay">
+            <br><br><br>
+            <h5>{{ i['actor'] }}</h5>
+            <h6>As</h6>
+            <h5>{{ i['character'] }} </h5>
+          </div>
+        </div>
+      {% endfor %}
+
+      <div class="btn">
+        <button class="get-started" type="button" name="button"><a href="{{ url_for('profile') }}">Move Back</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+{% endblock %}

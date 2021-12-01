@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sign-in</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+
+  <h1 class="sign-heading">SIGN IN</h1>
+  <form action="{{ url_for('validate') }}" method="post">
+    <div class="input">
+      <button class="ilab" type="button" name="button" disabled data-bs-toggle="tooltip" data-bs-pacement="top" title="Must only contain alphanumeric characters, underscore and dot.
+             Underscore and dot can't be at the end or start of a username (e.g _username / username_ / .username / username.).
+             Underscore and dot can't be next to each other (e.g user_.name).
+             Underscore or dot can't be used multiple times in a row (e.g user__name / user..name).
+             Number of characters must be between 8 to 20.">
+        Username
+      </button>
+      <input class="ibox" id="name" type="text" name="name" placeholder="ex. john_23_doe" required>
+    </div>
+    <div class="input">
+      <button class="ilab" type="button" name="button" disabled data-bs-toggle="tooltip" data-bs-pacement="top" title="There must be a minimum of 8 characters.
+      There must be atleast 1 uppercase letter.
+      There must be atleast 1 lowercase letter.
+      There must be atleast 1 Special Character.
+      There must be atleast 1 Number.">
+        Password
+      </button>
+      <input class="ibox" id="password" type="password" name="pwd" placeholder="ex. johnDoe69$" required>
+    </div>
+    <div class="btn">
+      <!-- <button class="get-started" type="button" name="button"><a href="profile.html">Sign In</a></button> -->
+      <input class="get-started" type="submit" value="Log In"></input>
+    </div>
+  </form>
+  <div class="prompt">
+    <p>Don't have an account? <b><a href="{{ url_for('signup') }}">Sign Up</a></b></p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}" charset="utf-8"></script>
+</body>
+
+</html>

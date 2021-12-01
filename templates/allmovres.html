@@ -1,0 +1,33 @@
+{% extends 'header.html' %}
+{% block title %} Search Results {% endblock %}
+{% block content %}
+
+        <style>
+              .back_img {
+                background: url("https://occ-0-2433-448.1.nflxso.net/art/cd5c9/3e192edf2027c536e25bb5d3b6ac93ced77cd5c9.jpg");
+              }
+
+              {% for movie in movies: %}
+                .{{movie['css']}} {
+                    background: url("{{ movie['backdrop'] }}");
+                }
+              {% endfor %}
+        </style>
+        {% for movie in movies: %}
+        <div class="movie_card">
+            <div class="info_section">
+                <div class="movie_header">
+                    <h1>{{ movie.title }}</h1>
+                    <h4>{{ movie['year'] }}</h4>
+                    <button class="see-more"><a href="{{ url_for(goto, movid=movie['id']) }}">More</a></button>
+                </div>
+            </div>
+            <div class="blur_back {{ movie['css'] }}"></div>
+        </div>
+        {% endfor %}
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+                crossorigin="anonymous"></script>
+
+{% endblock %}

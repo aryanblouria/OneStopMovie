@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Profile Creation</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+
+  <h1 class="sign-heading">Create Your Profile</h1>
+  <form action="{{ url_for('profcrt') }}" method="post">
+
+    <div class="input">
+      <button class="ilab" type="button" name="button" disabled>
+        Bio
+      </button>
+      <input class="ibox" id="bio" type="text" name="bio" placeholder="One line to describe your taste in movies" required>
+    </div>
+
+    <div class="input">
+      <button class="ilab" type="button" name="button" disabled>
+        Date Of Birth
+      </button>
+      <input class="ibox" id="db" type="date" name="db" required>
+    </div>
+
+    <div class="input">
+      <button class="ilab" type="button" name="button" disabled>
+        Favourite Director
+      </button>
+      <input class="ibox" id="favdir" type="text" name="favdir" placeholder="ex. Christoper Nolan" required>
+    </div>
+
+    <div class="input">
+      <button class="ilab" type="button" name="button" disabled>
+        Favourite Movie
+      </button>
+      <input class="ibox" id="favmov" type="text" name="favmov" placeholder="ex. Prestige" required>
+    </div>
+
+    <div class="input">
+      <button class="ilab" type="button" name="button" disabled>
+        Preferred Language
+      </button>
+      <input class="ibox" id="preflang" type="text" name="preflang" placeholder="ex. English" required>
+    </div>
+
+    <div class="input">
+      <button class="ilab" type="button" name="button" disabled>
+        Preferred Genres
+      </button>
+      <input class="ibox" id="prefgen" type="text" name="prefgen" placeholder="ex. Sci-Fi, Action" required>
+    </div>
+
+    <div class="btn">
+      <input class="get-started" type="submit" value="Create Profile"></input>
+    </div>
+  </form>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}" charset="utf-8"></script>
+</body>
+
+</html>

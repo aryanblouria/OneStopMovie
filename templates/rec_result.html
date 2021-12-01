@@ -1,0 +1,52 @@
+{% extends 'header.html' %}
+{% block title %} Recommendation Results {% endblock %}
+{% block content %}
+
+  <div class="container-fluid rec-container">
+    <div class="main-text">
+      <h1>Movies Recommended For You...</h1>
+    </div>
+    <div class="row">
+      {% for movie in mov_data[:5] %}
+      <div class="col">
+        <div class="card text-white bg-dark" style="width: 18rem; display: flex; flex-direction:column;">
+            <img src="{{ movie['poster'] }}" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{ movie['title'] }}</h5>
+                <hr>
+                <p class="card-text">{{ movie['overview'] }}</p>
+                <hr>
+                <button class="get-started"> <a href="{{url_for('movrecfin',movid=movie['id'])}}">See More</a></button>
+                <br>
+                <br>
+            </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <br><br>
+    <div class="row">
+      {% for movie in mov_data[5:10] %}
+      <div class="col">
+        <div class="card text-white bg-dark" style="width: 18rem; display: flex; flex-direction:column;">
+            <img src="{{ movie['poster'] }}" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{ movie['title'] }}</h5>
+                <hr>
+                <p class="card-text">{{ movie['overview'] }}</p>
+                <hr>
+                <button class="get-started"> <a href="{{url_for('movrecfin',movid=movie['id'])}}">See More</a></button>
+                <br>
+                <br>
+            </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+      <br><br>
+
+    <!-- <button class="get-started"><a href="{{ url_for('profile') }}">Move Back</a></button> -->
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+{% endblock %}
